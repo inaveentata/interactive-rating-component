@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+
+    /* Primary color */
+    --Orange: hsl(25, 97%, 53%);
+
+    /* Neutral colors */
+    --White: hsl(0, 0%, 100%);
+    --LightGrey: hsl(217, 12%, 63%);
+    --MediumGrey: hsl(216, 12%, 54%);
+    --DarkBlue: hsl(213, 19%, 18%);
+    --VeryDarkBlue: hsl(216, 12%, 8%)
+}
+
+html{
+    font-family: 'Overpass', sans-serif;
+}
+
+body{
+    color: var(--White);
+    background-color: var(--VeryDarkBlue);
+
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+
+/* Rating container starting */
+.rating-container, .thankYou-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: var(--DarkBlue);
+
+    width: 27rem;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 2rem ;
+    border-radius: 1rem;
+
+    visibility: hidden;
+
+}
+
+
+/* Active state */
+.rating-container.active{
+    visibility: visible;
+}
+
+.star img{
+    background-color: hsla(216, 12%, 54%, 0.171);    
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+
+.rating-container .text{
+    margin: 1rem 0;
+}
+
+.rating-container .text p{
+    font-size: 15px;
+    color: var(--LightGrey);
+}
+
+.rating-btn{
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating-btn .btn{
+    font-size: 1rem;
+    border-radius: 50%;
+    padding: 1rem 1.2rem;
+    border: none;
+    background-color: hsla(216, 12%, 54%, 0.171);
+    color: var(--LightGrey);
+    cursor: pointer;
+}
+
+.rating-btn .btn:hover{
+    background-color: var(--Orange);
+    color: var(--White);
+}
+
+
+
+.rating-btn .btn:active{
+    transform: scale(1.5);
+    transition: transform 0.2s linear;
+}
+
+#btn{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#btn #submit-btn{
+    width: 100%;
+    text-transform: uppercase;
+    background-color: var(--Orange);
+    color: var(--White);
+    padding: 0.8rem 0;
+    border: none;
+    border-radius: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+#btn #submit-btn:hover{
+    color: var(--Orange);
+    background-color: var(--White);
+}
+
+#btn #submit-btn:active {
+    transform: translateY(3px);
+    transition: transform 0.2s linear;
+    
+}
+
+/* Rating container ending */
+
+
+
+
+/* Thank You container starting */
+
+/* Active state */
+.thankYou-container.active{
+    visibility: visible;
+}
+
+.thankYou-container {
+    align-items: center;
+}
+
+.thankYou-container .text {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.thankYou-container .text p{
+    color: var(--LightGrey);
+    margin-top: 1rem;
+}
+
+.rating-score{
+    background-color: hsla(216, 12%, 54%, 0.171);
+    padding: 0.5rem 0.7rem;
+    border-radius: 1rem;
+    color: var(--Orange);
+    margin-top: 1rem;
+}
+
+
+
+
+
+
+/* Font size (paragraph): 15px */
+
+
+.attribution{
+    position: absolute;
+    bottom: 0;
+    background-color: var(--LightGrey);
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+} 
+
+
+/*  Media Queries
+Mobile: 375px
+Desktop: 1440px */
+
+/* Media Queries */
+
+@media screen and (max-width: 375px){
+    .rating-container, .thankYou-container{
+        width: 20rem;
+    }
+    
+}
+
